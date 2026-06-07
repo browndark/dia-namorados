@@ -96,8 +96,4 @@ Pressione a tecla "I" 3 vezes para ver uma chuva de corações! 💕
 - **Certificado SSL**: GitHub Pages fornece HTTPS automaticamente
 - **Domínio Customizado**: Você pode usar um domínio próprio se tiver (veja Settings > Pages)
 
----
-
-Feito com ❤️ para Thiane no Dia dos Namorados 2025
-
-**Boa Sorte! Tenho certeza que ela vai amar! 💕**
+---*
