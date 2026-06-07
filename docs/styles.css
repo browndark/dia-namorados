@@ -256,6 +256,9 @@ body {
     margin-bottom: 30px;
     font-weight: 600;
     letter-spacing: 1px;
+    transition: transform 0.1s ease;
+    cursor: pointer;
+    user-select: none;
 }
 
 .dedication-text {

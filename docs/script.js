@@ -278,7 +278,7 @@ function setupEventListeners() {
 }
 
 // ===== EASTER EGG =====
-// Pressionar "I" 3 vezes para ativar modo de coração flutuante
+// Desktop: Pressionar "I" 3 vezes para ativar modo de coração flutuante
 let iKeyCount = 0;
 document.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'i') {
@@ -291,6 +291,36 @@ document.addEventListener('keydown', (e) => {
         iKeyCount = 0;
     }
 });
+
+// Mobile: Dar 3 toques rápidos no título para ativar chuva de corações
+let touchCount = 0;
+let lastTouchTime = 0;
+const dedicationTitle = document.querySelector('.dedication-title');
+
+if (dedicationTitle) {
+    dedicationTitle.addEventListener('touchend', () => {
+        const now = Date.now();
+        
+        // Se passou mais de 1 segundo desde o último toque, reinicia o contador
+        if (now - lastTouchTime > 1000) {
+            touchCount = 0;
+        }
+        
+        touchCount++;
+        lastTouchTime = now;
+        
+        // Adicionar feedback visual
+        dedicationTitle.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            dedicationTitle.style.transform = 'scale(1)';
+        }, 100);
+        
+        if (touchCount >= 3) {
+            createHeartRain();
+            touchCount = 0;
+        }
+    });
+}
 
 function createHeartRain() {
     for (let i = 0; i < 30; i++) {
