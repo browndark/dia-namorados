@@ -13,6 +13,8 @@ const modalPrev = document.getElementById('modalPrev');
 const modalNext = document.getElementById('modalNext');
 const modalCounter = document.getElementById('modalCounter');
 const petalsContainer = document.querySelector('.petals-container');
+const welcomeOverlay = document.getElementById('welcomeOverlay');
+const welcomeBtn = document.getElementById('welcomeBtn');
 
 // Lista de fotos
 const photos = [
@@ -41,28 +43,47 @@ document.addEventListener('DOMContentLoaded', () => {
     createPetals();
     autoPlayCarousel();
     setupEventListeners();
+    setupWelcomeScreen();
     
     // Atualizar contador de dias a cada minuto
     setInterval(updateDaysCounter, 60000);
 });
 
-// ===== MÚSICA =====
-function initMusic() {
-    // Tentar reproduzir automaticamente
-    const playPromise = backgroundMusic.play();
-    
-    if (playPromise !== undefined) {
-        playPromise
-            .then(() => {
+// ===== TELA DE BEM-VINDAS =====
+function setupWelcomeScreen() {
+    welcomeBtn.addEventListener('click', () => {
+        // Remover overlay
+        welcomeOverlay.classList.add('hidden');
+        
+        // Iniciar música
+        setTimeout(() => {
+            backgroundMusic.play().then(() => {
                 isPlaying = true;
                 musicToggle.classList.add('playing');
-            })
-            .catch(() => {
-                // Autoplay foi bloqueado, mostrar ao usuário
-                isPlaying = false;
-                musicToggle.classList.remove('playing');
+            }).catch(err => {
+                console.log('Erro ao tocar música:', err);
             });
-    }
+            
+            // Remover overlay do DOM após a animação
+            setTimeout(() => {
+                welcomeOverlay.style.display = 'none';
+            }, 500);
+        }, 100);
+    });
+    
+    // Permitir clicar em qualquer lugar para iniciar também
+    welcomeOverlay.addEventListener('click', (e) => {
+        if (e.target === welcomeOverlay || e.target === welcomeBtn) {
+            welcomeBtn.click();
+        }
+    });
+}
+
+// ===== MÚSICA =====
+function initMusic() {
+    // Música não inicia automaticamente - será iniciada pelo overlay
+    isPlaying = false;
+    musicToggle.classList.remove('playing');
 }
 
 musicToggle.addEventListener('click', () => {
