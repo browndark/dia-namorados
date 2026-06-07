@@ -40,7 +40,7 @@ Um site romântico e interativo criado com muito amor para celebrar nosso dia es
    - **Branch**: `main`
    - **Pasta**: `/docs`
 4. Clique "Save"
-5. O GitHub mostrará a URL do seu site: `https://seu-username.github.io/dia-namorados/`
+5. O GitHub mostrará a URL do seu site: `(https://browndark.github.io/dia-namorados/)`
 
 ### Passo 4: Aguardar Deploy
 - Pode levar alguns minutos (geralmente menos de 2 minutos)
