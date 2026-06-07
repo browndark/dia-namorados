@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia dos Namorados - Para Thiane 💕</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pétalas animadas -->
+    <div class="petals-container"></div>
+    
+    <!-- Botão de controle de música (canto superior esquerdo) -->
+    <div class="music-control">
+        <button id="musicToggle" class="music-btn" title="Pausar/Retomar música">
+            <span class="music-icon">🎵</span>
+        </button>
+    </div>
+
+    <!-- Botão compartilhar -->
+    <button id="shareBtn" class="share-btn" title="Compartilhar">
+        <span>📤</span> Compartilhar
+    </button>
+
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Seção de dedicação -->
+        <section class="dedication-section">
+            <h1 class="dedication-title">✨ Para Você, Thiane ✨</h1>
+            <p class="dedication-text">
+                Thiane, teu nome ficou preso na minha rotina, aparece no café, na música e em cada esquina. 
+                Tem algo em você que bagunça minha razão, como quem chega de mansinho e toma o coração. 
+                Não é só saudade, nem só vontade de te ver, é esse jeito raro que você tem de acontecer.
+            </p>
+            
+            <!-- Contador de dias -->
+            <div class="days-counter">
+                <p>Estamos juntos há <span id="daysCount">0</span> dias 💕</p>
+            </div>
+        </section>
+
+        <!-- Seção do carrossel -->
+        <section class="carousel-section">
+            <h2 class="carousel-title">Nossas Memórias 📸</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div id="carouselTrack" class="carousel-track">
+                        <!-- As fotos serão adicionadas via JavaScript -->
+                    </div>
+                    
+                    <!-- Controles do carrossel -->
+                    <button class="carousel-btn prev" id="prevBtn" aria-label="Foto anterior">❮</button>
+                    <button class="carousel-btn next" id="nextBtn" aria-label="Próxima foto">❯</button>
+                </div>
+                
+                <!-- Indicadores -->
+                <div id="indicators" class="carousel-indicators"></div>
+            </div>
+        </section>
+
+        <!-- Seção final -->
+        <section class="final-section">
+            <h2 class="final-title">Feliz Dia dos Namorados! 🌹</h2>
+            <p class="final-text">
+                Que cada dia ao seu lado seja tão especial quanto você é para mim. 
+                Você é meu maior presente. Te amo, Thiane! 💕
+            </p>
+            <div class="heart-animation">💕</div>
+        </section>
+    </div>
+
+    <!-- Modal para galeria de fotos -->
+    <div id="galleryModal" class="gallery-modal">
+        <div class="modal-content">
+            <button id="closeModal" class="close-modal">&times;</button>
+            <img id="modalImage" src="" alt="Foto ampliada">
+            <div class="modal-nav">
+                <button id="modalPrev" class="modal-btn">❮</button>
+                <span id="modalCounter"></span>
+                <button id="modalNext" class="modal-btn">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" preload="auto">
+        <source src="assets/audio/COROA NO PEITO.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

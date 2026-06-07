@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia GitHub Pages - Dia dos Namorados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #fce4ec 100%);
+            color: #424242;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #ff1744;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #ff6e40;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        
+        .step {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f5f5f5;
+            border-left: 5px solid #ff1744;
+            border-radius: 8px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #ff1744;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .step h2 {
+            color: #ff1744;
+            display: inline-block;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .step p, .step li {
+            line-height: 1.8;
+            color: #424242;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .step ul {
+            margin-left: 20px;
+        }
+        
+        .step li {
+            margin-bottom: 12px;
+        }
+        
+        .image-placeholder {
+            background: #e0e0e0;
+            border: 2px dashed #bdbdbd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            color: #757575;
+            font-size: 14px;
+        }
+        
+        .highlight {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffb74d;
+        }
+        
+        .highlight strong {
+            color: #ff6e40;
+        }
+        
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        
+        .success {
+            background: #c8e6c9;
+            border-left-color: #4caf50;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .success::before {
+            content: "✅ ";
+            font-weight: bold;
+        }
+        
+        .warning {
+            background: #ffe0b2;
+            border-left-color: #ff9800;
+            color: #e65100;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .warning::before {
+            content: "⚠️ ";
+            font-weight: bold;
+        }
+        
+        .final-section {
+            background: linear-gradient(135deg, #ff1744 0%, #ff6e40 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .final-section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .final-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .url-box {
+            background: #fff;
+            color: #ff1744;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 15px 0;
+            word-break: break-all;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .button-example {
+            display: inline-block;
+            background: #ff1744;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 10px 5px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .step {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💕 Guia: Publicar no GitHub Pages</h1>
+        <p class="subtitle">Passo-a-passo para deixar seu site ao vivo na internet</p>
+        
+        <!-- PASSO 1 -->
+        <div class="step">
+            <h2><span class="step-number">1</span>Criar Repositório no GitHub</h2>
+            
+            <p>Vá para <strong>https://github.com</strong> e faça login com sua conta (se não tiver, crie uma gratuitamente)</p>
+            
+            <ol>
+                <li>Clique no <strong>+</strong> (sinal de mais) no canto superior direito</li>
+                <li>Selecione <strong>"New repository"</strong></li>
+                <li>Preencha os campos:
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Repository name:</strong> <code>dia-namorados</code></li>
+                        <li><strong>Description (opcional):</strong> "Um site de presente para Thiane no Dia dos Namorados"</li>
+                        <li><strong>Privacidade:</strong> Selecione <strong>"Public"</strong> (precisa ser público para GitHub Pages funcionar)</li>
+                    </ul>
+                </li>
+                <li>⚠️ <strong>NÃO MARQUE</strong> "Initialize this repository with a README"</li>
+                <li>Clique em <strong>"Create repository"</strong></li>
+            </ol>
+            
+            <p style="margin-top: 15px; color: #4caf50; font-weight: bold;">✅ Seu repositório foi criado!</p>
+        </div>
+        
+        <!-- PASSO 2 -->
+        <div class="step">
+            <h2><span class="step-number">2</span>Fazer Upload dos Arquivos</h2>
+            
+            <p>Você verá uma página vazia do repositório. Agora vamos adicionar os arquivos:</p>
+            
+            <ol>
+                <li>Clique em <strong>"Add file"</strong> (botão verde)</li>
+                <li>Selecione <strong>"Upload files"</strong></li>
+                <li><strong>Arraste os arquivos</strong> da pasta <code>docs</code> para a área de upload:
+                    <ul style="margin-top: 10px;">
+                        <li>✅ <code>index.html</code></li>
+                        <li>✅ <code>styles.css</code></li>
+                        <li>✅ <code>script.js</code></li>
+                        <li>✅ Pasta <code>assets</code> (com imagens e música)</li>
+                    </ul>
+                </li>
+                <li>Clique em <strong>"Commit changes"</strong> para confirmar</li>
+            </ol>
+            
+            <div class="highlight">
+                <strong>💡 Dica:</strong> Se preferir, você pode criar as pastas e arquivos um a um usando "Add file" > "Create new file". Mas upload em lote é mais rápido!
+            </div>
+        </div>
+        
+        <!-- PASSO 3 -->
+        <div class="step">
+            <h2><span class="step-number">3</span>Ativar GitHub Pages</h2>
+            
+            <p>Agora vamos publicar o site:</p>
+            
+            <ol>
+                <li>Na página do repositório, clique em <strong>"Settings"</strong> (ícone de engrenagem, no topo)</li>
+                <li>No menu esquerdo, clique em <strong>"Pages"</strong></li>
+                <li>Em <strong>"Source"</strong>, mude para:
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Branch:</strong> <code>main</code></li>
+                        <li><strong>Folder:</strong> <code>/ (root)</code></li>
+                    </ul>
+                </li>
+                <li>Clique em <strong>"Save"</strong></li>
+                <li>O GitHub criará seu site! Aguarde uns 2-3 minutos...</li>
+            </ol>
+            
+            <div class="warning">
+                Se aparecer um erro sobre "index.html não encontrado", certifique-se que você fez upload do arquivo <code>index.html</code> diretamente na raiz do repositório.
+            </div>
+        </div>
+        
+        <!-- PASSO 4 -->
+        <div class="step">
+            <h2><span class="step-number">4</span>Encontrar sua URL</h2>
+            
+            <p>Volte para a página de <strong>Settings > Pages</strong> e procure por uma mensagem como:</p>
+            
+            <div class="url-box">
+                Your site is live at: https://seu-username.github.io/dia-namorados/
+            </div>
+            
+            <p style="margin-top: 15px;">Essa é a URL do seu site! 🎉 Você pode:</p>
+            
+            <ul>
+                <li>✅ Compartilhar com Thiane</li>
+                <li>✅ Enviar pelo WhatsApp, email, etc</li>
+                <li>✅ Publicar nas redes sociais</li>
+                <li>✅ Adicionar aos favoritos do navegador</li>
+            </ul>
+            
+            <div class="success">
+                O site ficará online para sempre (ou enquanto o repositório existir)!
+            </div>
+        </div>
+        
+        <!-- PASSO 5 -->
+        <div class="step">
+            <h2><span class="step-number">5</span>Customizações Futuras (Opcional)</h2>
+            
+            <p>Se quiser mudar algo depois, é fácil:</p>
+            
+            <ul>
+                <li><strong>Mudar a mensagem:</strong> Edite <code>index.html</code> no repositório</li>
+                <li><strong>Mudar as cores:</strong> Edite <code>styles.css</code></li>
+                <li><strong>Adicionar mais fotos:</strong> Adicione as imagens em <code>assets/images/</code> e edite <code>script.js</code></li>
+            </ul>
+            
+            <p style="margin-top: 15px; color: #757575;">Cada vez que você faz alterações, o GitHub atualiza automaticamente o site em alguns segundos.</p>
+        </div>
+        
+        <!-- TROUBLESHOOTING -->
+        <div class="step">
+            <h2><span class="step-number">❓</span>Dúvidas Comuns</h2>
+            
+            <p><strong>P: Quanto tempo leva para ficar pronto?</strong></p>
+            <p>R: Geralmente 2-3 minutos, mas pode levar até 10 minutos em alguns casos.</p>
+            
+            <p style="margin-top: 15px;"><strong>P: A música não toca no celular!</strong></p>
+            <p>R: Alguns navegadores mobile bloqueiam autoplay. A pessoa pode clicar no ícone 🎵 para iniciar.</p>
+            
+            <p style="margin-top: 15px;"><strong>P: Posso usar um domínio próprio?</strong></p>
+            <p>R: Sim! Em Settings > Pages > Custom domain, adicione seu domínio.</p>
+            
+            <p style="margin-top: 15px;"><strong>P: O site é gratuito?</strong></p>
+            <p>R: Totalmente! GitHub Pages é 100% gratuito. Não há limites de tempo ou visitantes.</p>
+            
+            <p style="margin-top: 15px;"><strong>P: Posso manter o site privado?</strong></p>
+            <p>R: Não, GitHub Pages requer repositório público. Mas qualquer pessoa precisa da URL para acessar.</p>
+        </div>
+        
+        <!-- FINAL -->
+        <div class="final-section">
+            <h2>🎉 Pronto!</h2>
+            <p>
+                Você criou um site lindo e personalizado para Thiane!<br><br>
+                <strong>Próximo passo:</strong> Siga os passos acima e compartilhe a URL com sua namorada.<br><br>
+                Tenho certeza que ela vai amar! 💕
+            </p>
+        </div>
+    </div>
+</body>
+</html>
